@@ -1,3 +1,5 @@
+import sys
+
 DNA2Protein = {
         'TTT' : 'F', 'TCT' : 'S', 'TAT' : 'Y', 'TGT' : 'C',
         'TTC' : 'F', 'TCC' : 'S', 'TAC' : 'Y', 'TGC' : 'C',
@@ -18,7 +20,7 @@ DNA2Protein = {
 }
 p = ''
 
-with open('samplefasta.fasta','r') as f, open('nuc2amino.csv', 'w') as output_file:
+with open(sys.argv[1],'r') as f, open(sys.argv[2], 'w') as output_file:
     for line in f:
             if line.startswith('>'):
                     line = line[:-14]
